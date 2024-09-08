@@ -436,11 +436,28 @@
         </div>
 <div class="form-field">
   <label class="input-label">Comment
-    <textarea class="modal-input" name="comment" id=""></textarea>
+    <textarea class="modal-input area" name="comment" placeholder="Text input"></textarea>
   </label>
 </div>
-       <input type="checkbox">
-       <button type="submit" class="button primary">Send</button>
+      <div class="modal-field">
+            <input
+              class="input-check visualli-hidden"
+              id="input-check"
+              name="user-check"
+              type="checkbox"
+              value="true"
+            />
+            <label class="check-text" for="input-check">
+              <span>
+                <svg class="check-icon" width="10" height="8">
+                  <use href="./images/icons.svg#ptichka"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a href="" class="check-link"> Privacy Policy</a></label
+            >
+          </div>
+       <button type="submit" class="button primary modal-button">Send</button>
         
        </form>
       </div>

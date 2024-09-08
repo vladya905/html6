@@ -407,6 +407,10 @@ footer {
 .subscribe-form > input::placeholder {
   color: var(--primary-white);
 }
+.subscribe-form > input:hover,
+.subscribe-form > input:focus {
+  outline: none;
+}
 .button.primary.subs-btn {
   display: flex;
   padding: 8px 24px;
@@ -475,7 +479,7 @@ footer {
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
   opacity: 1;
-  transition: opacity var(--cubic);
+  transition: opacity var(--cubic), visibility var(--cubic);
 }
 
 .backdrop.is-hidden {
@@ -537,10 +541,13 @@ footer {
   text-align: center;
 }
 .input-label {
+  display: flex;
+  flex-direction: column;
   font-size: 12px;
   line-height: 1.2;
   letter-spacing: 0.04em;
   color: var(--light-slate);
+  gap: 4px;
 }
 .input-wrap {
   position: relative;
@@ -563,6 +570,11 @@ footer {
 .modal-input:is(:hover, :focus) + .modal-ico {
   fill: var(--primary-brand);
 }
+.modal-input.area {
+  height: 120px;
+  resize: none;
+  padding: 8px 16px;
+}
 .modal-ico {
   position: absolute;
   width: 18px;
@@ -574,4 +586,52 @@ footer {
 .modal-ico > use {
   width: 100%;
   height: 100%;
+}
+
+.check-text span {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--dark);
+  border-radius: 2px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+}
+.check-text {
+  display: flex;
+  margin-top: 16px;
+  align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  color: var(--light-slate-color);
+  margin-right: 2px;
+}
+.input-check:checked + .check-text > span {
+  background-color: var(--pressed-state);
+  border: none;
+  fill: var(--primary-white);
+}
+.input-check:checked + .check-text {
+  user-select: none;
+  background-color: transparent;
+}
+.input-check:focus + .check-text > span {
+  border-color: var(--dark);
+}
+.check-link {
+  color: var(--primary-brand);
+  font-size: 12px;
+  margin-left: 4px;
+}
+.modal-button {
+  display: block;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 169px;
+  height: 56px;
 }
